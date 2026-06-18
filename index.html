@@ -48,25 +48,30 @@
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
 
+        /* HERO: imagen completa y solo el contador */
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
             background-color: #0A0F1D;
             border-radius: 50px;
             margin-top: 20px;
             border: 2px solid #0047BB;
         }
 
-        .hero img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #F8FAFF;
+        /* Imagen completa (sin círculo) */
+        .hero img.portada {
+            width: 100%;
+            max-width: 500px; /* Ajusta según el ancho que quieras */
+            height: auto;
+            border-radius: 0; /* Sin círculo */
+            border: none;
             margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Icono grande tipo subrayado debajo del texto */
+        /* Icono grande tipo subrayado */
         .icono-subrayado {
             margin: 20px auto;
             text-align: center;
@@ -277,20 +282,22 @@
             h1 {
                 font-size: 2em;
             }
+            .hero img.portada {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- PORTADA -->
+        <!-- PORTADA: solo la imagen completa y el conteo -->
         <div class="hero">
-            <!-- Imagen personalizada -->
-            <img src="img/Foto.jpg" alt="Quinceañera">
-            <h1>✨ XV Años ✨</h1>
-            <h2>[Nombre de la Quinceañera]</h2>
-            <p>28 de noviembre de 2026</p>
+            <!-- Imagen completa (sin círculo) -->
+            <img src="img/Foto.jpg" alt=" " class="portada">
+
+            <!-- Contador de días -->
             <div class="countdown" id="countdown"></div>
-            <p>🎉 ¡Los espero para brillar conmigo! 🎉</p>
+
             <!-- Icono grande tipo subrayado -->
             <div class="icono-subrayado">
                 <img src="img/los-espero.png" alt="Los espero">
