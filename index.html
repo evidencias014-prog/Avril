@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>XV Años - [Nombre de la quinceañera]</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            background-color: #0A0F1D;
+            color: #C9D3E3;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
+            margin: 40px 0;
+            padding: 30px;
+            border: 2px solid #0047BB;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #F8FAFF;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #0A0F1D;
+            border-radius: 50px;
+            margin-top: 20px;
+            border: 2px solid #0047BB;
+        }
+
+        .hero img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #F8FAFF;
+            margin-bottom: 20px;
+        }
+
+        /* Icono grande tipo subrayado debajo del texto */
+        .icono-subrayado {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .icono-subrayado img {
+            width: auto;
+            height: auto;
+            max-width: 200px;
+            border: none;
+            border-radius: 0;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .countdown-item {
+            background: #0A0F1D;
+            padding: 15px 20px;
+            border-radius: 20px;
+            text-align: center;
+            min-width: 80px;
+            border: 2px solid #2E7BFF;
+        }
+        .countdown-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #F8FAFF;
+            font-family: 'Playfair Display', serif;
+        }
+        .countdown-item div:last-child {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: #C9D3E3;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .card {
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 25px;
+            flex: 1;
+            min-width: 250px;
+            border: 2px solid #2E7BFF;
+        }
+        .card h3 {
+            text-align: left;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #F8FAFF;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h3 img {
+            width: 28px;
+            height: 28px;
+            vertical-align: middle;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px 20px;
+            border-radius: 40px;
+            border: 2px solid #2E7BFF;
+        }
+        .time {
+            font-weight: 600;
+            color: #F8FAFF;
+            min-width: 80px;
+            font-size: 1.2em;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .qr-section {
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 2px solid #0047BB;
+        }
+        .qr-section h2 {
+            color: #F8FAFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .qr-section h2 img {
+            width: 32px;
+            height: 32px;
+        }
+        input {
+            padding: 12px;
+            border-radius: 50px;
+            border: 2px solid #2E7BFF;
+            width: 80%;
+            max-width: 300px;
+            margin: 20px 0;
+            font-size: 1em;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            background: #0A0F1D;
+            color: #C9D3E3;
+        }
+        button {
+            background: #0A0F1D;
+            color: #F8FAFF;
+            border: 2px solid #2E7BFF;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+        button:hover {
+            transform: scale(1.02);
+            background: #0047BB;
+            border-color: #0047BB;
+        }
+        .mensaje-confirmacion {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .map-button {
+            display: inline-block;
+            background: #0A0F1D;
+            color: #F8FAFF;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            border: 2px solid #2E7BFF;
+        }
+        .map-button:hover {
+            background: #0047BB;
+            border-color: #0047BB;
+        }
+
+        .regalos-box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 20px;
+            max-width: 400px;
+            margin: 15px auto;
+            border: 2px solid #2E7BFF;
+        }
+
+        .titulo-con-icono {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .titulo-con-icono img {
+            width: 32px;
+            height: 32px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9em;
+            color: #C9D3E3;
+            border-top: 2px solid #0047BB;
+            margin-top: 1rem;
+        }
+        footer .iconos-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        footer .iconos-footer img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            section {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- PORTADA -->
+        <div class="hero">
+            <!-- Imagen personalizada -->
+            <img src="img/Foto.jpg" alt="Quinceañera">
+            <h1>✨ XV Años ✨</h1>
+            <h2>[Nombre de la Quinceañera]</h2>
+            <p>28 de noviembre de 2026</p>
+            <div class="countdown" id="countdown"></div>
+            <p>🎉 ¡Los espero para brillar conmigo! 🎉</p>
+            <!-- Icono grande tipo subrayado -->
+            <div class="icono-subrayado">
+                <img src="img/los-espero.png" alt="Los espero">
+            </div>
+        </div>
+
+        <!-- CUÁNDO Y DÓNDE -->
+        <section>
+            <h2 class="titulo-con-icono">
+                <img src="img/ubicacion.png" alt="Ubicación">
+                Dónde & Cuándo
+            </h2>
+            <div class="info-grid">
+                <div class="card">
+                    <h3>
+                        <img src="img/ceremonia.png" alt="Ceremonia">
+                        Ceremonia
+                    </h3>
+                    <p><strong>Templo de Santo Domingo de Guzmán</strong></p>
+                    <p>📅 28 de noviembre 2026 - 6:00 PM</p>
+                    <p>📍 C. Macedonio Alcalá s/n, Centro, Oaxaca</p>
+                    <a href="https://maps.google.com/?q=Templo+Santo+Domingo+Oaxaca" target="_blank" class="map-button">Ver mapa</a>
+                </div>
+                <div class="card">
+                    <h3>
+                        <img src="img/recepcion.png" alt="Recepción">
+                        Recepción
+                    </h3>
+                    <p><strong>Jardín Etnobotánico de Oaxaca</strong></p>
+                    <p>📅 28 de noviembre 2026 - 7:30 PM</p>
+                    <p>📍 Reforma Sur N, Centro, Oaxaca</p>
+                    <a href="https://maps.google.com/?q=Jardín+Etnobotánico+Oaxaca" target="_blank" class="map-button">Ver mapa</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITINERARIO -->
+        <section>
+            <h2 class="titulo-con-icono">
+                <img src="img/ubicacion.png" alt="Itinerario">
+                Itinerario de la Noche
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item"><span class="time">7:30 PM</span> Llegada de invitados</div>
+                <div class="timeline-item"><span class="time">8:00 PM</span> Entrada y cambio de zapatos</div>
+                <div class="timeline-item"><span class="time">8:45 PM</span> Cena (buffet)</div>
+                <div class="timeline-item"><span class="time">9:20 PM</span> Baile de celebración</div>
+                <div class="timeline-item"><span class="time">10:45 PM</span> Hora Loca</div>
+                <div class="timeline-item"><span class="time">1:30 AM</span> Despedida</div>
+            </div>
+        </section>
+
+        <!-- DRESS CODE -->
+        <section>
+            <h2 class="titulo-con-icono">
+                <img src="img/dress.png" alt="Dress Code">
+                Código de vestimenta
+            </h2>
+            <p style="text-align: center; font-size: 1.3em;">Formal / Gala</p>
+            <p style="text-align: center;">✨ Traje elegante y vestido largo ✨</p>
+            <p style="text-align: center;">🔞 Evento para mayores de 14 años</p>
+        </section>
+
+        <!-- REGALOS -->
+        <section>
+            <h2 class="titulo-con-icono">
+                <img src="img/regalos.png" alt="Regalos">
+                Regalos
+            </h2>
+            <p style="text-align: center;">Tu presencia es el mejor regalo, pero si deseas obsequiarme algo:</p>
+            <div class="regalos-box">
+                <p>🏦 Banco: XXXXXXXXXXX</p>
+                <p>💳 Cuenta CLABE: XXXXXXXXXXXX</p>
+                <p>👤 Titular: [Nombre de la mamá o papá]</p>
+            </div>
+        </section>
+
+        <!-- CONFIRMACIÓN DE ASISTENCIA -->
+        <section class="qr-section">
+            <h2 class="titulo-con-icono">
+                <img src="img/confirmar.png" alt="Confirmar">
+                Confirmar asistencia
+            </h2>
+            <p>Por favor, ingresa tu <strong>código único</strong> que recibiste con tu invitación digital.</p>
+            <input type="text" id="codigoInput" placeholder="Ejemplo: INV001" autocomplete="off">
+            <br>
+            <button id="confirmarBtn">Confirmar entrada</button>
+            <div id="mensajeResultado" class="mensaje-confirmacion"></div>
+            <p style="font-size: 0.8em; margin-top: 20px;">⚠️ Al confirmar, tu código quedará registrado como usado para el acceso.</p>
+        </section>
+
+        <!-- MUSICA -->
+        <section>
+            <h2 class="titulo-con-icono">
+                <img src="img/musica.png" alt="Música">
+                Música para bailar
+            </h2>
+            <iframe style="border-radius:12px; display: block; margin: 0 auto;" src="https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT?utm_source=generator" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            <p style="text-align: center; margin-top: 10px;">🎶 ¡Pide tu canción en la fiesta! 🎶</p>
+        </section>
+
+        <footer>
+            <div class="iconos-footer">
+                <img src="img/fotos1.png" alt="Comparte tus fotos">
+                <span>Comparte tus fotos con</span>
+            </div>
+            <p><strong>#XV_Nombre_2026</strong></p>
+            <p>✨ Gracias por ser parte de este día tan especial ✨</p>
+        </footer>
+    </div>
+
+    <script>
+        // 1. CUENTA REGRESIVA (28 de noviembre de 2026, 18:00 hrs)
+        function actualizarCountdown() {
+            const fiesta = new Date(2026, 10, 28, 18, 0, 0).getTime();
+            const ahora = new Date().getTime();
+            const distancia = fiesta - ahora;
+
+            if (distancia < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item"><div class="countdown-number">🎉</div><div>¡Ya llegó!</div></div>';
+                return;
+            }
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (86400000)) / (3600000));
+            const minutos = Math.floor((distancia % 3600000) / 60000);
+            const segundos = Math.floor((distancia % 60000) / 1000);
+
+            document.getElementById('countdown').innerHTML = `
+                <div class="countdown-item"><div class="countdown-number">${dias}</div><div>Días</div></div>
+                <div class="countdown-item"><div class="countdown-number">${horas}</div><div>Horas</div></div>
+                <div class="countdown-item"><div class="countdown-number">${minutos}</div><div>Minutos</div></div>
+                <div class="countdown-item"><div class="countdown-number">${segundos}</div><div>Segundos</div></div>
+            `;
+        }
+        actualizarCountdown();
+        setInterval(actualizarCountdown, 1000);
+
+        // 2. INTEGRACIÓN CON TU WEB APP
+        const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbzSkuU2KYmEmmNefNspSPX7JpeQsikOgFs32qFao8BE0ycOE4_hgArhrKCm6dVMd24dog/exec";
+
+        document.getElementById('confirmarBtn').addEventListener('click', async () => {
+            const codigo = document.getElementById('codigoInput').value.trim().toUpperCase();
+            const mensajeDiv = document.getElementById('mensajeResultado');
+
+            if (!codigo) {
+                mensajeDiv.innerHTML = '<span style="color: #FFB6C1;">❌ Por favor ingresa tu código</span>';
+                return;
+            }
+
+            try {
+                const respuestaRaw = await fetch(`${URL_WEB_APP}?code=${codigo}`);
+                const respuesta = await respuestaRaw.json();
+
+                if (respuesta.status === 'success') {
+                    mensajeDiv.innerHTML = `<span style="color: #A8E6CF;">✅ ${respuesta.message}</span>`;
+                    document.getElementById('codigoInput').value = '';
+                } else if (respuesta.status === 'already_used') {
+                    mensajeDiv.innerHTML = `<span style="color: #FFB6C1;">⚠️ ${respuesta.message}</span>`;
+                } else {
+                    mensajeDiv.innerHTML = `<span style="color: #FFB6C1;">❌ ${respuesta.message}</span>`;
+                }
+            } catch (error) {
+                mensajeDiv.innerHTML = '<span style="color: #FFB6C1;">❌ Error de conexión. Intenta de nuevo más tarde.</span>';
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
